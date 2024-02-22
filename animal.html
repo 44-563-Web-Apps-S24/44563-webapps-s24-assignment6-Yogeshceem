@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+ 
+<body>
+    <title>Animal Game</title>
+    <h2>Animal game by Yogesh</h2>
+
+<h2>Getting input</h2>
+
+
+<form>
+    <label for="secret">The hidden animal type:</label>
+    <input type="password" id="guess" name="secret" value="Chicken">
+
+    <label for="guess">Guess the animal:</label>
+    <input type="text" id="guess" name="guess">
+
+    <button onclick="checkAnimal()">Check the guess</button>
+
+<p id="results">Correct guesses: 0 | Wrong guesses: 0</p>
+
+<script>
+    var correct = 0;
+    var wrong = 0;
+    
+    function checkAnimal() {
+        var secretAnimal = document.getElementById('secret').value.toLowerCase();
+        var guessedAnimal = document.getElementById('guess').value.toLowerCase();
+        
+        if (guessedAnimal === secretAnimal) {
+            correct++;
+            alert("Ruff ruff");
+        } else {
+            wrong++;
+            alert("Grrrr");
+        }
+        
+        document.getElementById('results').innerHTML = "Correct guesses: " + correct + " | Wrong guesses: " + wrong;
+    }
+</script>
+</form>
+
+
+<p id="result">This text will be replaced </p>
+
+</body>
+</html> 
